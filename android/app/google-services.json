@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "939533047686",
+    "project_id": "rightatseven-0521",
+    "storage_bucket": "rightatseven-0521.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939533047686:android:1780ce450e54d9d78bbe07",
+        "android_client_info": {
+          "package_name": "com.example.rightatseven"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwuvJF9JrBrx9xk46jqnflR7quQrglqxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
