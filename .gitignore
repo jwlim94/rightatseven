@@ -157,3 +157,11 @@ app.*.symbols
 
 # Ignore generated JSON serialization files
 **/*.g.dart
+
+# Firebase functions
+functions/node_modules/
+functions/lib/
+functions/build/
+functions/.runtimeconfig.json
+.firebase/
+firebase-debug.log
