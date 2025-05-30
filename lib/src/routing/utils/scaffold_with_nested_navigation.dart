@@ -33,12 +33,24 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
         child: BottomNavigationBar(
           items: [
             BottomNavigationBarItem(
+              icon: const Icon(Icons.flash_on_outlined),
+              label: Strings.auctionTab,
+            ),
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.loop_rounded),
+              label: Strings.marketTab,
+            ),
+            BottomNavigationBarItem(
               icon: const Icon(Icons.chat_outlined),
-              label: Strings.chat,
+              label: Strings.chatTab,
+            ),
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.notifications_outlined),
+              label: Strings.notificationTab,
             ),
             BottomNavigationBarItem(
               icon: const Icon(Icons.person_2_outlined),
-              label: Strings.profile,
+              label: Strings.profileTab,
             ),
           ],
           currentIndex: navigationShell.currentIndex,

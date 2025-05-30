@@ -1,7 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:rightatseven/src/features/auction/presentation/auction_screen.dart';
 import 'package:rightatseven/src/features/authentication/data/auth_repository.dart';
 import 'package:rightatseven/src/features/chat/presentation/chat_screen.dart';
+import 'package:rightatseven/src/features/market/presentation/market_screen.dart';
+import 'package:rightatseven/src/features/notification/presentation/notification_screen.dart';
 import 'package:rightatseven/src/features/user/presentation/profile_screen.dart';
 import 'package:rightatseven/src/routing/app_startup.dart';
 import 'package:rightatseven/src/routing/providers/app_startup_state_provider.dart';
@@ -21,7 +24,7 @@ GoRouter goRouterState(Ref ref) {
   final authRepository = ref.watch(authRepositoryProvider);
 
   return GoRouter(
-    initialLocation: Strings.chatPath,
+    initialLocation: Strings.auctionPath,
     extraCodec: const ExtraCodec(),
     debugLogDiagnostics: true,
     navigatorKey: Keys.rootNavigatorKey,
@@ -54,6 +57,30 @@ GoRouter goRouterState(Ref ref) {
             ),
         branches: [
           StatefulShellBranch(
+            navigatorKey: Keys.auctionNavigatorKey,
+            routes: [
+              GoRoute(
+                path: Strings.auctionPath,
+                name: AppRoute.auction.name,
+                pageBuilder: (context, state) {
+                  return const NoTransitionPage(child: AuctionScreen());
+                },
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            navigatorKey: Keys.marketNavigatorKey,
+            routes: [
+              GoRoute(
+                path: Strings.marketPath,
+                name: AppRoute.market.name,
+                pageBuilder: (context, state) {
+                  return const NoTransitionPage(child: MarketScreen());
+                },
+              ),
+            ],
+          ),
+          StatefulShellBranch(
             navigatorKey: Keys.chatNavigatorKey,
             routes: [
               GoRoute(
@@ -61,6 +88,18 @@ GoRouter goRouterState(Ref ref) {
                 name: AppRoute.chat.name,
                 pageBuilder: (context, state) {
                   return const NoTransitionPage(child: ChatScreen());
+                },
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            navigatorKey: Keys.notificationNavigatorKey,
+            routes: [
+              GoRoute(
+                path: Strings.notificationPath,
+                name: AppRoute.notification.name,
+                pageBuilder: (context, state) {
+                  return const NoTransitionPage(child: NotificationScreen());
                 },
               ),
             ],

@@ -1,1 +1,1 @@
-enum AppRoute { startup, chat, profile }
+enum AppRoute { startup, auction, market, chat, notification, profile }
